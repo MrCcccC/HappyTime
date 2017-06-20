@@ -9,17 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var submitBtn: UIButton!
+    var i = 5
+    var timer : Timer? //创建一个定时器
+    
+    
+    
+    @IBAction func submit(_ sender: Any) {
+        
+        let vc = MainViewController()
+        self.present(vc, animated: true, completion: nil)
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        SetupTimer()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //改变button的标题
+    func updateTitle(){
+        self.submitBtn.setTitle("\(i)跳过", for: .normal)
+        self.submitBtn.setTitleColor(#colorLiteral(red: 0.4937108383, green: 0.5909212771, blue: 1, alpha: 1), for: .normal)
+        self.i -= 1
+        if self.i<0 {
+            timer?.invalidate()
+            let vc = MainViewController()
+            self.present(vc, animated: true, completion: nil)
+        }
+        
     }
-
+    
+    //创建定时器
+    func SetupTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(updateTitle),
+                                     userInfo: nil,
+                                     repeats: true)
+        RunLoop.current.add(timer!, forMode: RunLoopMode.commonModes)
+    }
+    
+    
 
 }
 

@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="休闲一刻" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGM.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dsv-ik-T3O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-xc-MCi">
+                                <rect key="frame" x="272" y="580" width="77" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="2lU-RF-Zwa"/>
+                                    <constraint firstAttribute="height" constant="26" id="eMf-y3-PSO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" backgroundImage="submit.png"/>
+                                <connections>
+                                    <action selector="submit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jEm-0q-IY0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="休闲一刻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc9-8a-vaf">
+                                <rect key="frame" x="105" y="159" width="165.5" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="9Qc-Vl-tqa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.97214282227156745" green="1" blue="0.75789803473780792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.5559423575129534" green="0.5559423575129534" blue="0.5559423575129534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="20" height="-7"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uc9-8a-vaf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="0VX-kV-oag"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5w0-xc-MCi" secondAttribute="bottom" constant="61" id="1ZD-KA-EwQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dsv-ik-T3O" secondAttribute="bottom" id="6x0-rP-G8m"/>
+                            <constraint firstAttribute="trailing" secondItem="dsv-ik-T3O" secondAttribute="trailing" id="AbU-KL-4xj"/>
+                            <constraint firstItem="dsv-ik-T3O" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BNc-ga-KeB"/>
+                            <constraint firstItem="uc9-8a-vaf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="89" id="EXv-V8-1JJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dsv-ik-T3O" secondAttribute="bottom" id="FgR-Iv-8c5"/>
+                            <constraint firstItem="dsv-ik-T3O" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ISV-uP-jCs"/>
+                            <constraint firstItem="uc9-8a-vaf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XRS-WI-aIw"/>
+                            <constraint firstItem="dsv-ik-T3O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kPr-6W-XeJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dsv-ik-T3O" secondAttribute="trailing" id="lUt-ws-Vbb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5w0-xc-MCi" secondAttribute="trailing" constant="10" id="rDb-Ca-CVm"/>
+                            <constraint firstItem="dsv-ik-T3O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rid-P5-3z0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uc9-8a-vaf" secondAttribute="trailing" constant="88.5" id="yDS-v1-bkD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="submitBtn" destination="5w0-xc-MCi" id="KHv-LV-f6D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BGM.jpg" width="700" height="1167"/>
+        <image name="submit.png" width="458" height="135"/>
+    </resources>
 </document>
